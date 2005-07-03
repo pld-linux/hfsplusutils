@@ -24,7 +24,7 @@ HFS+ volume utils.
 Narzêdzia do woluminów HFS+.
 
 %prep
-%setup  -q -n hfsplus-%{version}
+%setup -q -n hfsplus-%{version}
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
@@ -37,21 +37,23 @@ Narzêdzia do woluminów HFS+.
 %{__autoheader}
 %{__automake}
 
-%configure --disable-shared
+%configure \
+	--disable-shared
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 install -d $RPM_BUILD_ROOT/sbin
-cp -f $RPM_BUILD_ROOT/%{_bindir}/hpfsck $RPM_BUILD_ROOT/sbin/fsck.hfsplus
+cp -f $RPM_BUILD_ROOT%{_bindir}/hpfsck $RPM_BUILD_ROOT/sbin/fsck.hfsplus
 
-install -d $RPM_BUILD_ROOT/%{_mandir}/man1
-gzip -c < doc/man/hfsp.man > $RPM_BUILD_ROOT/%{_mandir}/man1/hfsp.1.gz
+install -d $RPM_BUILD_ROOT%{_mandir}/man1
+gzip -c < doc/man/hfsp.man > $RPM_BUILD_ROOT%{_mandir}/man1/hfsp.1.gz
 for a in hpcd hpcopy hpfsck hpls hpmkdir hpmount hppwd hprm hpumount fsck.hfsplus ; do
-        ln -sf hfsp.1.gz $RPM_BUILD_ROOT/%{_mandir}/man1/$a.1.gz
+        ln -sf hfsp.1.gz $RPM_BUILD_ROOT%{_mandir}/man1/$a.1.gz
 done
 
 %clean
