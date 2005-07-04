@@ -51,9 +51,9 @@ install -d $RPM_BUILD_ROOT/sbin
 cp -f $RPM_BUILD_ROOT%{_bindir}/hpfsck $RPM_BUILD_ROOT/sbin/fsck.hfsplus
 
 install -d $RPM_BUILD_ROOT%{_mandir}/man1
-gzip -c < doc/man/hfsp.man > $RPM_BUILD_ROOT%{_mandir}/man1/hfsp.1.gz
+install doc/man/hfsp.man $RPM_BUILD_ROOT%{_mandir}/man1/hfsp.1
 for a in hpcd hpcopy hpfsck hpls hpmkdir hpmount hppwd hprm hpumount fsck.hfsplus ; do
-        ln -sf hfsp.1.gz $RPM_BUILD_ROOT%{_mandir}/man1/$a.1.gz
+	echo '.so hfsp.1' > $RPM_BUILD_ROOT%{_mandir}/man1/${a}.1
 done
 
 %clean
