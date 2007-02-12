@@ -1,5 +1,5 @@
 Summary:	HFS+ volume utils
-Summary(pl):	Narzêdzia do woluminów HFS+
+Summary(pl.UTF-8):   NarzÄ™dzia do woluminÃ³w HFS+
 Name:		hfsplusutils
 Version:	1.0.4
 Release:	0.1
@@ -20,8 +20,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 HFS+ volume utils.
 
-%description -l pl
-Narzêdzia do woluminów HFS+.
+%description -l pl.UTF-8
+NarzÄ™dzia do woluminÃ³w HFS+.
 
 %prep
 %setup -q -n hfsplus-%{version}
