@@ -1,5 +1,5 @@
 Summary:	HFS+ volume utils
-Summary(pl.UTF-8):   Narzędzia do woluminów HFS+
+Summary(pl.UTF-8):	Narzędzia do woluminów HFS+
 Name:		hfsplusutils
 Version:	1.0.4
 Release:	0.1
