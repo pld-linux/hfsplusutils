@@ -1,0 +1,11 @@
+--- hfsplus-1.0.4/configure.in.orig	2002-03-05 20:57:19.000000000 +0100
++++ hfsplus-1.0.4/configure.in	2013-03-15 19:39:27.572839916 +0100
+@@ -23,7 +23,7 @@
+ dnl
+ 
+ AC_INIT(src/hfsputil.c)
+-AM_CONFIG_HEADER(config.h)
++AC_CONFIG_HEADERS(config.h)
+ AC_CANONICAL_SYSTEM
+ AC_ARG_PROGRAM
+ 
